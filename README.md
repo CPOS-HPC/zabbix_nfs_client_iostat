@@ -10,7 +10,7 @@ for Zabbix 3.x (Zabbix 2.x was not tested)
 
 zabbix-agent must be installed on the monitored node
 
-iostat packet MUST be installed
+nfs-utils packet MUST be installed
 
 ## Install
 
