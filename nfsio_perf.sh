@@ -25,6 +25,9 @@
 # read_retry_perc	number of read retransmissions in percent
 # read_rtt		duration read time to receives the replyclient (Round Travel Time)
 # read_exe		duration until the RPC read request is completed (includes the RTT time)
+# read_queue	duration from the time the NFS client created the RPC request task to the time the request is transmitted
+# read_error	number of read operations that completed with an error status (status < 0) (only available on kernels with RPC iostats version 1.1 or above)
+# read_error_perc	number of read operations that completed with an error status (status < 0) in percent
 #
 # write:
 # write_ops_s		number of write operations per second
@@ -34,6 +37,9 @@
 # write_retry_perc	number of write retransmissions in percent
 # write_rtt		duration write time to receives the replyclient (Round Travel Time)
 # write_exe		duration until the RPC write request is completed (includes the RTT time)
+# write_queue	duration from the time the NFS client created the RPC request task to the time the request is transmitted
+# write_error	number of write operations that completed with an error status (status < 0) (only available on kernels with RPC iostats version 1.1 or above)
+# write_error_perc	number of write operations that completed with an error status (status < 0) in percent
 #
 # ===========================================================
 
@@ -79,6 +85,18 @@ case ${NFS_IO} in
         result=`$CMD 1 3 $NFS_MOUNT| grep -A 1 '^read:' |tail -1| awk -F' ' '{print $7}'`
         echo ${result}
         ;;
+    read_queue)
+        result=`$CMD 1 3 $NFS_MOUNT| grep -A 1 '^read:' |tail -1| awk -F' ' '{print $8}'`
+        echo ${result}
+        ;;
+    read_error)
+        result=`$CMD 1 3 $NFS_MOUNT| grep -A 1 '^read:' |tail -1| awk -F' ' '{print $9}'`
+        echo ${result}
+        ;;
+    read_error_perc)
+        result=`$CMD 1 3 $NFS_MOUNT| grep -A 1 '^read:' |tail -1| awk -F' ' '{print $10}' | grep -o '[^(].*[^%)]'`
+        echo ${result}
+        ;;
     write_ops_s)
         result=`$CMD 1 3 $NFS_MOUNT| grep -A 1 '^write:' |tail -1| awk -F' ' '{print $1}'`
         echo ${result}
@@ -105,6 +123,18 @@ case ${NFS_IO} in
         ;;
     write_exe)
         result=`$CMD 1 3 $NFS_MOUNT| grep -A 1 '^write:' |tail -1| awk -F' ' '{print $7}'`
+        echo ${result}
+        ;;
+    write_queue)
+        result=`$CMD 1 3 $NFS_MOUNT| grep -A 1 '^write:' |tail -1| awk -F' ' '{print $8}'`
+        echo ${result}
+        ;;
+    write_error)
+        result=`$CMD 1 3 $NFS_MOUNT| grep -A 1 '^write:' |tail -1| awk -F' ' '{print $9}'`
+        echo ${result}
+        ;;
+    write_error_perc)
+        result=`$CMD 1 3 $NFS_MOUNT| grep -A 1 '^write:' |tail -1| awk -F' ' '{print $10}' | grep -o '[^(].*[^%)]'`
         echo ${result}
         ;;
 esac
