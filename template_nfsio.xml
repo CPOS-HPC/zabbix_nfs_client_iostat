@@ -4,13 +4,12 @@
     <date>2018-01-12T10:28:24Z</date>
     <groups>
         <group>
-            <name>СЭП Шаблоны</name>
+            <name>Templates</name>
         </group>
     </groups>
     <templates>
         <template>
             <template>Template NFS io</template>
-            <name>Шаблон NFS io</name>
             <description>Author: Dmitry Malinin&#13;
 E.mail: dmitry@malinin.com&#13;
 Blog: http://zabbix.guru&#13;
@@ -18,7 +17,7 @@ Blog: http://zabbix.guru&#13;
 nfsiostat statistics for NFS client</description>
             <groups>
                 <group>
-                    <name>СЭП Шаблоны</name>
+                    <name>Templates</name>
                 </group>
             </groups>
             <applications>
@@ -94,7 +93,7 @@ nfsiostat statistics for NFS client</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>symmary length of the backlog queue</description>
+                            <description>summary length of the backlog queue</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -226,7 +225,7 @@ nfsiostat statistics for NFS client</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>number of kB read per each operation1</description>
+                            <description>number of kB read per each operation</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -534,7 +533,7 @@ nfsiostat statistics for NFS client</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>number of kB write per each operation1</description>
+                            <description>number of kB write per each operation</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
