@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2024-09-26T06:30:02Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template NFS IO Stats</template>
+            <name>Template NFS IO Stats</name>
+            <description>nfsiostat statistics for NFS client</description>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>NFS</name>
+                </application>
+            </applications>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>NFS Mount Point by Zabbix Agent</name>
+                    <key>nfsio.discovery</key>
+                    <delay>60</delay>
+                    <lifetime>1d</lifetime>
+                    <description>NFS mount point discovery</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - bklog</name>
+                            <key>nfsio[{#MOUNT_POINT},bklog]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>summary length of the backlog queue</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - op_s</name>
+                            <key>nfsio[{#MOUNT_POINT},op_s]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>summary operations per second</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - read_error</name>
+                            <key>nfsio[{#MOUNT_POINT},read_error]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>number of read operations that completed with an error status (status &lt; 0) (only available on kernels with RPC iostats version 1.1 or above)</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - read_error_perc</name>
+                            <key>nfsio[{#MOUNT_POINT},read_error_perc]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>number of read operations that completed with an error status (status &lt; 0) in percent</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - read_exe</name>
+                            <key>nfsio[{#MOUNT_POINT},read_exe]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>duration time to complete RPC read request (includes the RTT time)</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - read_kB_op</name>
+                            <key>nfsio[{#MOUNT_POINT},read_kB_op]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>number of kB read per each operation</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - read_kB_s</name>
+                            <key>nfsio[{#MOUNT_POINT},read_kB_s]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>number of kB read per second</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - read_ops_s</name>
+                            <key>nfsio[{#MOUNT_POINT},read_ops_s]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>number of read operations per second</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - read_queue</name>
+                            <key>nfsio[{#MOUNT_POINT},read_queue]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>duration time for RPC read request task from created to transmitted</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - read_retry</name>
+                            <key>nfsio[{#MOUNT_POINT},read_retry]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>number of read retransmissions</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - read_retry_perc</name>
+                            <key>nfsio[{#MOUNT_POINT},read_retry_perc]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>number of read retransmissions in percent</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - read_rtt</name>
+                            <key>nfsio[{#MOUNT_POINT},read_rtt]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>duration read time to receives the reply client (Round Travel Time)</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - write_error</name>
+                            <key>nfsio[{#MOUNT_POINT},write_error]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>number of write operations that completed with an error status (status &lt; 0) (only available on kernels with RPC iostats version 1.1 or above)</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - write_error_perc</name>
+                            <key>nfsio[{#MOUNT_POINT},write_error_perc]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>number of write operations that completed with an error status (status &lt; 0) in percent</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - write_exe</name>
+                            <key>nfsio[{#MOUNT_POINT},write_exe]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>duration time to complete RPC write request (includes the RTT time)</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - write_kB_op</name>
+                            <key>nfsio[{#MOUNT_POINT},write_kB_op]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>number of kB write per each operation</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - write_kB_s</name>
+                            <key>nfsio[{#MOUNT_POINT},write_kB_s]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>number of kB write per second</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - write_ops_s</name>
+                            <key>nfsio[{#MOUNT_POINT},write_ops_s]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>number of write operations per second</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - write_queue</name>
+                            <key>nfsio[{#MOUNT_POINT},write_queue]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>duration time for RPC write request task from created to transmitted</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - write_retry</name>
+                            <key>nfsio[{#MOUNT_POINT},write_retry]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>number of write retransmissions</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - write_retry_perc</name>
+                            <key>nfsio[{#MOUNT_POINT},write_retry_perc]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>number of write retransmissions in percent</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#MOUNT_POINT} - write_rtt</name>
+                            <key>nfsio[{#MOUNT_POINT},write_rtt]</key>
+                            <delay>60</delay>
+                            <history>30d</history>
+                            <value_type>FLOAT</value_type>
+                            <description>duration write time to receives the reply client (Round Travel Time)</description>
+                            <applications>
+                                <application>
+                                    <name>NFS</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                    </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>{#MOUNT_POINT} -Read / Write  kB/s</name>
+                            <graph_items>
+                                <graph_item>
+                                    <color>1A7C11</color>
+                                    <item>
+                                        <host>Template NFS IO Stats</host>
+                                        <key>nfsio[{#MOUNT_POINT},read_kB_s]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>F63100</color>
+                                    <item>
+                                        <host>Template NFS IO Stats</host>
+                                        <key>nfsio[{#MOUNT_POINT},write_kB_s]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
+                            <name>{#MOUNT_POINT} -Read / Write  op/s</name>
+                            <graph_items>
+                                <graph_item>
+                                    <color>1A7C11</color>
+                                    <item>
+                                        <host>Template NFS IO Stats</host>
+                                        <key>nfsio[{#MOUNT_POINT},read_ops_s]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>F63100</color>
+                                    <item>
+                                        <host>Template NFS IO Stats</host>
+                                        <key>nfsio[{#MOUNT_POINT},write_ops_s]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
+                            <name>{#MOUNT_POINT} - RPC request time</name>
+                            <graph_items>
+                                <graph_item>
+                                    <color>1A7C11</color>
+                                    <item>
+                                        <host>Template NFS IO Stats</host>
+                                        <key>nfsio[{#MOUNT_POINT},read_exe]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>F63100</color>
+                                    <item>
+                                        <host>Template NFS IO Stats</host>
+                                        <key>nfsio[{#MOUNT_POINT},write_exe]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <drawtype>DASHED_LINE</drawtype>
+                                    <color>2774A4</color>
+                                    <item>
+                                        <host>Template NFS IO Stats</host>
+                                        <key>nfsio[{#MOUNT_POINT},read_retry]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>3</sortorder>
+                                    <drawtype>DASHED_LINE</drawtype>
+                                    <color>AA00AA</color>
+                                    <item>
+                                        <host>Template NFS IO Stats</host>
+                                        <key>nfsio[{#MOUNT_POINT},write_retry]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                </discovery_rule>
+            </discovery_rules>
+        </template>
+    </templates>
+</zabbix_export>
