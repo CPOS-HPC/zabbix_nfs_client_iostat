@@ -9,6 +9,7 @@ This is a fork of https://github.com/pdacity/zabbix_nfs_client_iostat with bugfi
 > Version 1.3 - (20240926)
 
 for Zabbix 3.x, 5.x, 7.x
+
 Zabbix 6.x is not tested, but should be compatible with 5.x template
 
 zabbix-agent must be installed on the monitored node
