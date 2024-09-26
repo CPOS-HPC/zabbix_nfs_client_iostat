@@ -15,29 +15,29 @@
 #
 # summary：
 # op_s			summary operations per second
-# bklog			symmary length of the backlog queue
+# bklog			summary length of the backlog queue
 #
 # read:
 # read_ops_s		number of read operations per second
 # read_kB_s		number of kB read per second
-# read_kB_op		number of kB read per each operation1
+# read_kB_op		number of kB read per each operation
 # read_retry		number of read retransmissions
 # read_retry_perc	number of read retransmissions in percent
-# read_rtt		duration read time to receives the replyclient (Round Travel Time)
-# read_exe		duration until the RPC read request is completed (includes the RTT time)
-# read_queue	duration from the time the NFS client created the RPC request task to the time the request is transmitted
+# read_rtt		duration read time to receives the reply client (Round Travel Time)
+# read_exe		duration time to complete RPC read request (includes the RTT time)
+# read_queue	duration time for RPC read request task from created to transmitted
 # read_error	number of read operations that completed with an error status (status < 0) (only available on kernels with RPC iostats version 1.1 or above)
 # read_error_perc	number of read operations that completed with an error status (status < 0) in percent
 #
 # write:
 # write_ops_s		number of write operations per second
 # write_kB_s		number of kB write per second
-# write_kB_op		number of kB write per each operation1
+# write_kB_op		number of kB write per each operation
 # write_retry		number of write retransmissions
 # write_retry_perc	number of write retransmissions in percent
-# write_rtt		duration write time to receives the replyclient (Round Travel Time)
-# write_exe		duration until the RPC write request is completed (includes the RTT time)
-# write_queue	duration from the time the NFS client created the RPC request task to the time the request is transmitted
+# write_rtt		duration write time to receives the reply client (Round Travel Time)
+# write_exe		duration time to complete RPC write request (includes the RTT time)
+# write_queue	duration time for RPC write request task from created to transmitted
 # write_error	number of write operations that completed with an error status (status < 0) (only available on kernels with RPC iostats version 1.1 or above)
 # write_error_perc	number of write operations that completed with an error status (status < 0) in percent
 #
