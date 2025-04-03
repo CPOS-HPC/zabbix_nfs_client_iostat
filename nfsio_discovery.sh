@@ -15,6 +15,12 @@
 
 array="$(findmnt -lo target -n -t nfs,nfs4)"
 
+# If array is empty, return empty JSON
+if [[ -z "$array" ]]; then
+    printf '%s' '{"data":[]}'
+    exit 0
+fi
+
 comma=""
 printf '%s' '{"data":['
 
@@ -24,8 +30,3 @@ while IFS= read -r line ; do
 done <<< "$array"
 
 printf '%s' ']}'
-
-
-
-
-
