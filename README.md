@@ -6,7 +6,7 @@
 
 This is a fork of https://github.com/pdacity/zabbix_nfs_client_iostat with bugfixes, additional metrics, and support for newer Zabbix version.
 
-> Version 1.3 - (20240926)
+> Version 1.4 - (20250403)
 
 for Zabbix 3.x, 5.x, 7.x
 
@@ -41,3 +41,4 @@ nfs-utils packet MUST be installed
 * 1.1 - add "Read / Write kB/s", "Read / Write op/s" and "RPC request time" graphs into Template
 * 1.2 - get statistics for the period and not from the beginning of measurements, tnx https://github.com/alkolexx
 * 1.3 - add "queue, error, error_perc" metrics for both read & write side, add Zabbix 5.x & 7.x templates, fix bugs and typos
+* 1.4 - add empty LLD json response in nfsio_discovery.sh to avoid blank item creation
